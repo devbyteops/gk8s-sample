@@ -7,7 +7,10 @@ metadata:
     app: demo-voting-app
 
 spec:
+  type: LoadBalancer
   ports:
   - ports: 80
     targetPort: 80
   selector:
+    name: voting-app-pod
+    app: demo-voting-app
