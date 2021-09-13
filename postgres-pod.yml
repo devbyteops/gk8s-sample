@@ -10,5 +10,10 @@ spec:
   containers:
   - name: postgres
     image: postgres:latest
+    env:
+      - name: POSTGRES_USER
+        value: admin
+      - name: POSTGRES_PASSWORD
+        value: admin
     ports:
     - containerPort: 5432
