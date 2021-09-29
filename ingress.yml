@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: basic-ingress
+spec:
+  rules:
+     - host: demo-voting-app
+       http:
+         paths:
+           - backend:
+               service:
+                 name: xchain-frontend
+                 port:
+                   number: 80
+             path: /
+             pathType: Prefix
+           - backend:
+               service:
+                 name: xchain-backend
+                 port:
+                   number: 80
+             path: /api
+             pathType: Prefix
